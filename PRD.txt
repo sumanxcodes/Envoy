@@ -1,0 +1,182 @@
+Product Requirements Document (PRD)
+Product Name: Envoy Version: 2.0 (Native iOS + Supabase) Status: Live / Ready for Development Tagline: Your Intelligent Guide to the World. Description: A native iOS travel assistant that acts as a personal envoy, using generative AI to scout events, locations, and collaborative itineraries in real-time.
+
+1. Executive Summary
+Envoy bridges the gap between static maps and a human travel agent. Unlike standard map apps where users search manually, Envoy allows users to assign tasks to an AI agent (e.g., "Find a jazz bar open now with good cocktails" or "Scout a weekend trip to Kyoto for me and my friends").
+
+The app combines Google Gemini 2.5 Flash for intelligence, Apple MapKit for native visualization, and Supabase for user accounts, real-time collaboration, and data persistence.
+
+2. Technical Stack & Architecture
+2.1 Core iOS Frameworks
+Language: Swift 6.0+
+
+UI Framework: SwiftUI.
+
+Architecture: MVVM (Model-View-ViewModel).
+
+Concurrency: Swift Concurrency (async/await).
+
+2.2 Backend & Cloud (Supabase)
+Auth: Supabase Auth (Email/Password, Sign in with Apple).
+
+Database: PostgreSQL (for profiles, chat history, and shared trips).
+
+Real-time: Supabase Realtime (for live updates on shared trip boards).
+
+Storage: Supabase Storage (for user avatar images).
+
+2.3 AI & Intelligence
+Model: Google Gemini 2.5 Flash.
+
+SDK: GoogleGenerativeAI.
+
+Tools: Google Search (Events/News), Google Maps (Places/Geocoding).
+
+2.4 Design & Visuals
+Aesthetic: Corporate Minimalist, Geometric.
+
+Palette: Deep Navy, White, Teal Accent.
+
+Iconography: SF Symbols 5.0+.
+
+3. Core Features & Functional Requirements
+3.1 The "Envoy" Interface (Chat Overlay)
+Persona: The AI acts as a "Guide" or "Scout."
+
+Floating Panel: A bottom-sheet interface overlaying the map.
+
+Streaming Responses: Text streams token-by-token.
+
+Smart Suggestions: Chips like "Scout Coffee", "Find Events", "Weekend Plan".
+
+History Sync: Chat history is saved to Supabase chat_messages table and synced across devices.
+
+3.2 Interactive Map (MapKit)
+Dynamic Plotting: When Envoy finds places, pins drop instantly via animation.
+
+Clustering: Pins cluster dynamically to prevent UI clutter.
+
+Rich Popups: Tapping a pin shows a native sheet with:
+
+Place Name & Rating.
+
+"Open in Google Maps" button.
+
+"Add to Trip" button.
+
+3.3 Event Discovery Engine (The "Pulse")
+Query Handling: Detects queries like "Concerts tonight" or "Festivals this week".
+
+Logic: Prioritizes the "Google Search" tool over the "Maps" tool to find temporary events.
+
+Visualization: Events appear as distinct purple pins (vs. standard blue location pins).
+
+3.4 Collaborative Trip Boards (Hero Feature)
+Trip Creation: User can create a "Trip" (e.g., "Tokyo 2025").
+
+Invites: User generates a deep link to invite friends.
+
+Shared Map:
+
+All members can add pins to the shared map.
+
+Real-time: If User A adds a pin, User B sees it appear instantly (via Supabase Realtime).
+
+Voting: Simple "Heart" or "Upvote" on pinned locations.
+
+4. Data Model (Supabase Schema)
+4.1 Table: profiles
+id (UUID, PK)
+
+email (Text)
+
+avatar_url (Text, optional)
+
+4.2 Table: chat_messages
+id (UUID, PK)
+
+user_id (UUID, FK -> profiles.id)
+
+role (Text: 'user' | 'model')
+
+content (Text)
+
+markers_json (JSONB: Array of coordinates found in this message)
+
+created_at (Timestamp)
+
+4.3 Table: trips (New for Collaboration)
+id (UUID, PK)
+
+name (Text: "Summer Vacation")
+
+owner_id (UUID, FK)
+
+created_at (Timestamp)
+
+4.4 Table: trip_pins
+id (UUID, PK)
+
+trip_id (UUID, FK -> trips.id)
+
+added_by (UUID, FK -> profiles.id)
+
+lat (Float)
+
+lng (Float)
+
+place_name (Text)
+
+notes (Text: "Best ramen spot")
+
+5. User Experience Flows
+5.1 Onboarding
+Splash Screen: "Envoy" logo (Geometric E or Spark).
+
+Auth: User signs up/logs in via Supabase.
+
+Permissions: Request Location access ("Envoy needs your location to scout the area").
+
+5.2 The "Scout" Workflow
+User: Opens chat and asks, "Scout for quiet libraries near me."
+
+Envoy (AI): Queries Google Maps API via Gemini.
+
+App:
+
+Receives JSON response.
+
+Moves map camera to user's location.
+
+Drops 3 pins.
+
+Displays text: "I found 3 libraries. The City Library is open until 9 PM."
+
+5.3 The "Group Plan" Workflow
+User A: Creates a trip "Weekend Getaway."
+
+User A: Shares link via iMessage.
+
+User B: Taps link -> App opens -> Adds user to Trip in Supabase.
+
+User B: Finds a bar on the map and taps "Add to Trip."
+
+User A: Sees the pin appear on their screen instantly with User B's avatar bubble next to it.
+
+6. Future Roadmap (V1.5+)
+Voice Mode: "Hey Envoy..." hands-free interaction.
+
+Offline Mode: Cache map tiles and trip data for travel without roaming.
+
+Live Activities: Show distance to next destination on Lock Screen.
+
+Action Plan
+To start building Envoy, I recommend we proceed in this order:
+
+Setup: Initialize the Xcode Project & Supabase Dashboard.
+
+Auth: Build the Login/Sign-up screens.
+
+Map: Build the basic MapKit view.
+
+Chat: Integrate Gemini SDK.

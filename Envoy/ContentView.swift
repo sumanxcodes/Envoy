@@ -1,24 +1,42 @@
-//
-//  ContentView.swift
-//  Envoy
-//
-//  Created by Suman Raj Sharma on 6/12/2025.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if authViewModel.session != nil {
+                // Main App View (Placeholder)
+                VStack {
+                    Image(systemName: "map.fill")
+                        .font(.system(size: 60))
+                        .foregroundStyle(.teal)
+                        .padding()
+                    
+                    Text("Welcome to Envoy")
+                        .font(.title)
+                        .bold()
+                    
+                    Text("You are logged in.")
+                        .foregroundStyle(.gray)
+                    
+                    Button("Sign Out") {
+                        Task {
+                            await authViewModel.signOut()
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.red)
+                    .padding(.top)
+                }
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AuthViewModel())
 }
