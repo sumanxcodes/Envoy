@@ -34,30 +34,50 @@ class ChatViewModel: ObservableObject {
         
         isLoading = true
         
+        // Create placeholder AI message for streaming
+        let aiMessageId = generateId()
+        let aiMessage = ChatMessage(
+            id: aiMessageId,
+            userId: UUID(),
+            role: "model",
+            content: "",
+            markersJson: nil,
+            createdAt: Date()
+        )
+        messages.append(aiMessage)
+        
         do {
-            // Convert history for Gemini
+            // Convert history for Gemini (exclude the empty AI message we just added)
             let history = messages.dropLast().map { msg in
                 ModelContent(role: msg.role, parts: msg.content)
             }
             
-            let responseText = try await chatService.sendMessage(userText, history: history)
+            // Stream the response
+            let stream = chatService.sendMessageStream(userText, history: history)
+            var fullResponse = ""
             
-            let aiMessage = ChatMessage(
-                id: generateId(),
-                userId: UUID(), // Placeholder
-                role: "model",
-                content: responseText,
-                markersJson: nil,
-                createdAt: Date()
-            )
-            messages.append(aiMessage)
+            for try await chunk in stream {
+                fullResponse += chunk
+                
+                // Update the AI message with accumulated text
+                if let index = messages.firstIndex(where: { $0.id == aiMessageId }) {
+                    messages[index] = ChatMessage(
+                        id: aiMessageId,
+                        userId: UUID(),
+                        role: "model",
+                        content: fullResponse,
+                        markersJson: nil,
+                        createdAt: messages[index].createdAt
+                    )
+                }
+            }
             
         } catch {
             errorMessage = error.localizedDescription
-            // Optionally add an error message to the chat
+            // Remove the empty AI message on error
+            messages.removeAll { $0.id == aiMessageId }
         }
         
         isLoading = false
     }
 }
-
