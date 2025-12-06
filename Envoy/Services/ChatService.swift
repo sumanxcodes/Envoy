@@ -7,9 +7,12 @@ class ChatService {
     private let model: GenerativeModel
     
     private init() {
-        // TODO: Replace with your actual API Key or fetch from a secure source
-        // You can get an API key at https://aistudio.google.com/app/apikey
-        let apiKey = "YOUR_GEMINI_API_KEY"
+        // Get API key from environment variable
+        // Set in Xcode: Product > Scheme > Edit Scheme > Run > Arguments > Environment Variables
+        // Add: GEMINI_API_KEY = your-api-key-here
+        guard let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"], !apiKey.isEmpty else {
+            fatalError("GEMINI_API_KEY environment variable not set. Please add it in Xcode scheme settings.")
+        }
         
         self.model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
     }
