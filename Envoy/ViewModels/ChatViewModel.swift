@@ -16,7 +16,11 @@ class ChatViewModel: ObservableObject {
     private func generateId() -> UUID { UUID() }
     
     func sendMessage() async {
-        guard !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        print("🚀 sendMessage called with text: \(inputText)")
+        guard !inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { 
+            print("⚠️ Input text is empty, returning")
+            return 
+        }
         
         let userText = inputText
         inputText = ""
@@ -73,11 +77,26 @@ class ChatViewModel: ObservableObject {
             }
             
         } catch {
-            errorMessage = error.localizedDescription
+            print("❌ ERROR in sendMessage: \(error)")
+            print("❌ Error details: \(error.localizedDescription)")
+            errorMessage = "Error: \(error.localizedDescription)"
+            
             // Remove the empty AI message on error
             messages.removeAll { $0.id == aiMessageId }
+            
+            // Add error message to chat
+            let errorMsg = ChatMessage(
+                id: generateId(),
+                userId: UUID(),
+                role: "model",
+                content: "Sorry, I encountered an error: \(error.localizedDescription)",
+                markersJson: nil,
+                createdAt: Date()
+            )
+            messages.append(errorMsg)
         }
         
         isLoading = false
+        print("✅ sendMessage completed. isLoading = false")
     }
 }

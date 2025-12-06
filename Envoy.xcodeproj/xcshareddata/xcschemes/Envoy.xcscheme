@@ -56,6 +56,11 @@
             value = "disable"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "GEMINI_API_KEY"
+            value = "AIzaSyA8TIJb_51Eqks4jHozY5iP1j0L2uo03BY"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction

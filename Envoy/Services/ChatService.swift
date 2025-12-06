@@ -8,10 +8,13 @@ class ChatService {
     
     private init() {
         // Get API key from environment variable
-        // Set in Xcode: Product > Scheme > Edit Scheme > Run > Arguments > Environment Variables
-        // Add: GEMINI_API_KEY = your-api-key-here
-        guard let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"], !apiKey.isEmpty else {
-            fatalError("GEMINI_API_KEY environment variable not set. Please add it in Xcode scheme settings.")
+        let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
+        
+        if apiKey.isEmpty {
+            print("❌ WARNING: GEMINI_API_KEY not set!")
+            print("📝 Add it in: Xcode > Product > Scheme > Edit Scheme > Run > Arguments > Environment Variables")
+        } else {
+            print("✅ API key loaded (length: \(apiKey.count) chars)")
         }
         
         self.model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
