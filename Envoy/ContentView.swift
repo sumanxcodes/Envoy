@@ -2,36 +2,25 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var showSplash = true
     
     var body: some View {
         Group {
-            if authViewModel.session != nil {
-                // Main App View (Placeholder)
-                VStack {
-                    Image(systemName: "map.fill")
-                        .font(.system(size: 60))
-                        .foregroundStyle(.teal)
-                        .padding()
-                    
-                    Text("Welcome to Envoy")
-                        .font(.title)
-                        .bold()
-                    
-                    Text("You are logged in.")
-                        .foregroundStyle(.gray)
-                    
-                    Button("Sign Out") {
-                        Task {
-                            await authViewModel.signOut()
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.red)
-                    .padding(.top)
+            if showSplash {
+                SplashView {
+                    showSplash = false
                 }
             } else {
-                LoginView()
+                if authViewModel.session != nil {
+                    // Main App View
+                    MainTabView()
+                } else {
+                    LoginView()
+                }
             }
+        }
+        .task {
+            await authViewModel.initializeSession()
         }
     }
 }
