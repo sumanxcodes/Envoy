@@ -17,7 +17,8 @@ class ChatService {
             print("✅ API key loaded (length: \(apiKey.count) chars)")
         }
         
-        self.model = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
+        // Use gemini-2.0-flash-exp (newer, faster model)
+        self.model = GenerativeModel(name: "gemini-2.0-flash-exp", apiKey: apiKey)
     }
     
     func sendMessage(_ text: String, history: [ModelContent] = []) async throws -> String {

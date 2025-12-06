@@ -18,7 +18,7 @@
                BlueprintIdentifier = "A062EF612EE3116D00432532"
                BuildableName = "Envoy.app"
                BlueprintName = "Envoy"
-               ReferencedContainer = "container:Envoy.xcodeproj">
+               ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,18 +47,13 @@
             BlueprintIdentifier = "A062EF612EE3116D00432532"
             BuildableName = "Envoy.app"
             BlueprintName = "Envoy"
-            ReferencedContainer = "container:Envoy.xcodeproj">
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
             key = "GEMINI_API_KEY"
-            value = "AIzaSyA8TIJb_51Eqks4jHozY5iP1j0L2uo03BY"
+            value = "AIzaSyAAbpsnItzoTCG3MiO7EVTdbd5OHbQBx70"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
@@ -76,7 +71,7 @@
             BlueprintIdentifier = "A062EF612EE3116D00432532"
             BuildableName = "Envoy.app"
             BlueprintName = "Envoy"
-            ReferencedContainer = "container:Envoy.xcodeproj">
+            ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
