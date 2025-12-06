@@ -1,0 +1,194 @@
+🚀🚀🚀 ENVOY APP LAUNCHED 🚀🚀🚀
+📱 If you see this, console is working!
+Initial session emitted after attempting to refresh the local stored session.
+This is incorrect behavior and will be fixed in the next major release since it's a breaking change.
+To opt-in to the new behavior now, set `emitLocalSessionAsInitialSession: true` in your AuthClient configuration.
+The new behavior ensures that the locally stored session is always emitted, regardless of its validity or expiration.
+If you rely on the initial session to opt users in, you need to add an additional check for `session.isExpired` in the session.
+
+Check https://github.com/supabase/supabase-swift/pull/822 for more information.
+Initial session emitted after attempting to refresh the local stored session.
+This is incorrect behavior and will be fixed in the next major release since it's a breaking change.
+To opt-in to the new behavior now, set `emitLocalSessionAsInitialSession: true` in your AuthClient configuration.
+The new behavior ensures that the locally stored session is always emitted, regardless of its validity or expiration.
+If you rely on the initial session to opt users in, you need to add an additional check for `session.isExpired` in the session.
+
+Check https://github.com/supabase/supabase-swift/pull/822 for more information.
+Failed to locate resource named "default.csv"
+Connection error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction." UserInfo={NSDebugDescription=The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction.}
+(+[PPSClientDonation isRegisteredSubsystem:category:]) Permission denied: Maps / SpringfieldUsage
+(+[PPSClientDonation sendEventWithIdentifier:payload:]) Invalid inputs: payload={
+    isSPR = 0;
+}
+CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+DEBUG: updateUIView called
+DEBUG: Programmatic region change detected, updating map
+DEBUG: Setting mapType to standard
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+Connection error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction." UserInfo={NSDebugDescription=The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction.}
+(+[PPSClientDonation isRegisteredSubsystem:category:]) Permission denied: Maps / SpringfieldUsage
+(+[PPSClientDonation sendEventWithIdentifier:payload:]) Invalid inputs: payload={
+    isSPR = 1;
+}
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: Programmatic region change detected, updating map
+DEBUG: Pins unchanged, skipping annotation update
+Connection error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction." UserInfo={NSDebugDescription=The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction.}
+(+[PPSClientDonation isRegisteredSubsystem:category:]) Permission denied: Maps / SpringfieldUsage
+(+[PPSClientDonation sendEventWithIdentifier:payload:]) Invalid inputs: payload={
+    isSPR = 0;
+}
+Connection error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction." UserInfo={NSDebugDescription=The connection to service named com.apple.PerfPowerTelemetryClientRegistrationService was invalidated: Connection init failed at lookup with error 159 - Sandbox restriction.}
+(+[PPSClientDonation isRegisteredSubsystem:category:]) Permission denied: Maps / SpringfieldUsage
+(+[PPSClientDonation sendEventWithIdentifier:payload:]) Invalid inputs: payload={
+    isSPR = 1;
+}
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+✅ API key loaded (length: 39 chars)
+[GoogleGenerativeAI] Model gemini-2.0-flash-exp initialized. To enable additional logging, add `-GoogleGenerativeAIDebugLogEnabled` as a launch argument in Xcode.
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+🚀 sendMessage called with text: Find events tonight
+nw_connection_copy_protocol_metadata_internal_block_invoke [C3] Client called nw_connection_copy_protocol_metadata_internal on unconnected nw_connection
+nw_connection_copy_protocol_metadata_internal_block_invoke [C3] Client called nw_connection_copy_protocol_metadata_internal on unconnected nw_connection
+nw_connection_copy_connected_local_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_local_endpoint on unconnected nw_connection
+nw_connection_copy_connected_remote_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_remote_endpoint on unconnected nw_connection
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+[GoogleGenerativeAI] Response payload: {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 563.802042ms.",
+    "status": "RESOURCE_EXHAUSTED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Learn more about Gemini API quotas",
+            "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+        "violations": [
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+            "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+            "quotaDimensions": {
+              "location": "global",
+              "model": "gemini-2.0-flash-exp"
+            }
+          },
+          {
+            "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+            "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+            "quotaDimensions": {
+              "location": "global",
+              "model": "gemini-2.0-flash-exp"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.RetryInfo",
+        "retryDelay": "0s"
+      }
+    ]
+  }
+}
+❌ ERROR in sendMessage: internalError(underlying: GoogleGenerativeAI.RPCError(httpResponseCode: 429, message: "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 563.802042ms.", status: GoogleGenerativeAI.RPCStatus.resourceExhausted, details: [GoogleGenerativeAI.ErrorDetails(type: "type.googleapis.com/google.rpc.Help", reason: nil, domain: nil), GoogleGenerativeAI.ErrorDetails(type: "type.googleapis.com/google.rpc.QuotaFailure", reason: nil, domain: nil), GoogleGenerativeAI.ErrorDetails(type: "type.googleapis.com/google.rpc.RetryInfo", reason: nil, domain: nil)]))
+❌ Error details: The operation couldn’t be completed. (GoogleGenerativeAI.GenerateContentError error 1.)
+✅ sendMessage completed. isLoading = false
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
+DEBUG: updateUIView called
+DEBUG: No programmatic region change, keeping user's pan position
+DEBUG: Pins unchanged, skipping annotation update
