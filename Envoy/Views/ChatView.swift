@@ -35,6 +35,16 @@ struct ChatView: View {
                 }
             }
             
+            // Suggestion Chips (show when no messages or not loading)
+            if viewModel.messages.isEmpty && !viewModel.isLoading {
+                SuggestionChipsView(
+                    suggestions: ChatSuggestions.getSuggestions(hasMessages: !viewModel.messages.isEmpty)
+                ) { suggestion in
+                    viewModel.inputText = suggestion
+                }
+                .padding(.vertical, 8)
+            }
+            
             // Input Area
             HStack(spacing: 10) {
                 TextField("Ask Envoy...", text: $viewModel.inputText, onCommit: {
