@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A062EF942EE31FF200432532 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A062EF932EE31FF200432532 /* Supabase */; };
+		A062EFA12EE38EF200432532 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = A062EFA02EE38EF200432532 /* GoogleGenerativeAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A062EF942EE31FF200432532 /* Supabase in Frameworks */,
+				A062EFA12EE38EF200432532 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 			name = Envoy;
 			packageProductDependencies = (
 				A062EF932EE31FF200432532 /* Supabase */,
+				A062EFA02EE38EF200432532 /* GoogleGenerativeAI */,
 			);
 			productName = Envoy;
 			productReference = A062EF622EE3116D00432532 /* Envoy.app */;
@@ -110,6 +113,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				A062EF8B2EE31E1D00432532 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				A062EF9F2EE38EF200432532 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A062EF632EE3116D00432532 /* Products */;
@@ -273,6 +277,7 @@
 				DEVELOPMENT_TEAM = YB5796PY3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Envoy needs your location to scout nearby places.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,6 +310,7 @@
 				DEVELOPMENT_TEAM = YB5796PY3T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Envoy needs your location to scout nearby places.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +365,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		A062EF9F2EE38EF200432532 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -366,6 +380,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A062EF8B2EE31E1D00432532 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		A062EFA02EE38EF200432532 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A062EF9F2EE38EF200432532 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
