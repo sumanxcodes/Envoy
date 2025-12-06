@@ -15,7 +15,7 @@ struct AppTheme {
     static let tertiaryLabel = Color(UIColor.tertiaryLabel)
     
     // Tints
-    static let tint = Color(UIColor.systemBlue)
+    static let tint = Color(UIColor.systemOrange)
     static let destructive = Color(UIColor.systemRed)
     static let success = Color(UIColor.systemGreen)
     
