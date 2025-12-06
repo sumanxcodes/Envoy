@@ -15,23 +15,49 @@ struct MainTabView: View {
                 }
             }
         )) {
-            Tab("Home", systemImage: "map.fill", value: "Home") {
-                MapView()
+            Tab("Home", systemImage: "house.fill", value: "Home") {
+                if #available(iOS 26.0, *) {
+                    MapView()
+                } else {
+                    VStack(spacing: 12) {
+                        Image(systemName: "map")
+                            .font(.largeTitle)
+                            .foregroundStyle(.secondary)
+                        Text("Maps require iOS 26 or newer")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(.systemGray6))
+                }
             }
             
             Tab("Trips", systemImage: "briefcase.fill", value: "Trips") {
                 TripsView()
             }
             
-            Tab("Profile", systemImage: "person.fill", value: "Profile") {
-                ProfileView()
+            Tab("Settings", systemImage: "gear", value: "Settings") {
+                SettingsView()
             }
             
-            Tab("Chat", systemImage: "bubble.left.and.bubble.right.fill", value: "Chat", role: .search) {
+            Tab("Chat", systemImage: "message.fill", value: "Chat", role: .search) {
                 Color.clear // Placeholder, content shown in sheet
             }
         }
+
         .tabViewStyle(.sidebarAdaptable)
+        .tint(AppTheme.tint)
+        .toolbarBackground(.thickMaterial, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
+        .onAppear {
+            // Customize tab bar appearance for glass effect
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemThickMaterialDark)
+            
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
         .sheet(isPresented: $showChat) {
             NavigationStack {
                 ChatView()
@@ -52,4 +78,8 @@ struct MainTabView: View {
             .presentationDragIndicator(.visible)
         }
     }
+}
+
+#Preview {
+    MainTabView()
 }
